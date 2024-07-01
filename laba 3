@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+long long countNumbers(int p) {
+    long long totalNumbers = (long long) pow(2, p);
+    long long invalidNumbers = p - 2;
+    long long validNumbers = totalNumbers - invalidNumbers;
+    return validNumbers;
+}
+
+int main() {
+    int p;
+    scanf("%d", &p);
+    if (p < 0 || p > 30) {
+        return 1;
+    }
+    long long result = countNumbers(p);
+    printf("%lld\n", result);
+
+    return 0;
+}
