@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int t1, t2, t3;
+    float totalTime, averageTime;
+
+    printf("Введіть три значення: ");
+    scanf("%d %d %d", &t1, &t2, &t3);
+
+    totalTime = t1 + t2 + t3;
+    averageTime = totalTime / 3;
+
+    printf("Час, необхідний для зʼїдання пирога: %.2f годин\n", averageTime);
+
+    return 0;
+}
