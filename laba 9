@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int minSteps(int x, int y) {
+    if (x == y) {
+        return 0;
+    }
+
+    int distance = y - x;
+    int steps = 0;
+    int step_length = 1;
+    int total_distance_covered = 0;
+
+    while (total_distance_covered < distance) {
+        steps++;
+        total_distance_covered += step_length;
+        if (total_distance_covered >= distance) {
+            break;
+        }
+
+        steps++;
+        total_distance_covered += step_length;
+        if (total_distance_covered >= distance) {
+            break;
+        }
+
+        step_length++;
+    }
+
+    return steps;
+}
+
+int main() {
+    int x, y;
+    printf("Enter the values of x and y:\n");
+    scanf("%d %d", &x, &y);
+
+    if (x < 0 || y >= 2147483648 || x > y) {
+        printf("Invalid input. Please ensure 0 <= x <= y < 2147483648.\n");
+        return 1;
+    }
+
+    int result = minSteps(x, y);
+    printf("Minimum number of steps required: %d\n", result);
+
+    return 0;
+}
