@@ -2,15 +2,13 @@
 
 int main() {
     int t1, t2, t3;
-    float totalTime, averageTime;
-
-    printf("Введіть три значення: ");
+    printf("Введіть три значення:\n");
     scanf("%d %d %d", &t1, &t2, &t3);
-
-    totalTime = t1 + t2 + t3;
-    averageTime = totalTime / 3;
-
-    printf("Час, необхідний для зʼїдання пирога: %.2f годин\n", averageTime);
-
+    
+    double total_speed = (1.0 / t1) + (1.0 / t2) + (1.0 / t3);
+    double time_to_eat_pie = 1.0 / total_speed;
+    
+    printf("Час, необхідний для зʼїдання пирога: %.2f годин\n", time_to_eat_pie);
+    
     return 0;
 }
